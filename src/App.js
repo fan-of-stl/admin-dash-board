@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AButton from "./components/atoms/AButton";
+import AGraph from "./components/atoms/AGraph";
+import AIcon from "./components/atoms/AIcon";
+import PermDeviceInformationIcon from "@mui/icons-material/PermDeviceInformation";
+
+const chartData = {
+  labels: ["Jan", "Feb", "Mar", "Apr"],
+  datasets: [
+    {
+      label: "Revenue",
+      data: [100, 200, 150, 250],
+      borderColor: "blue",
+      backgroundColor: "rgba(0, 0, 255, 0.2)",
+      tension: 0.4,
+    },
+  ],
+};
+
+const chartOptions = {
+  responsive: true,
+  plugins: {
+    legend: { display: true },
+  },
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AButton variant={"outlined"}>Add</AButton>
+      <AIcon name={PermDeviceInformationIcon} size="medium" />
+      <AGraph data={chartData} options={chartOptions} />
     </div>
   );
 }
