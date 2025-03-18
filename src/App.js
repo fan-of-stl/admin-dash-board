@@ -4,7 +4,6 @@ import comingSoonAnimation from "./assets/coming-soon.json";
 import "./App.css";
 import Grid from "@mui/material/Grid2";
 import AText from "./components/atoms/AText";
-import SortBar from "./components/moldecules/SortBar";
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
             textAlign={"center"}
           >
             <AText variant="h4">Home Page Coming Soon...</AText>
-            <SortBar />
           </Grid>
         </Grid>
       </div>
