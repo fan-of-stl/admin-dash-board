@@ -4,12 +4,11 @@ import AButton from "../atoms/AButton";
 import AIcon from "../atoms/AIcon";
 import { Sort } from "@mui/icons-material";
 
-const SortBar = ({ data = [], onSort }) => {
+const SortBar = ({ data = [], onSort, variant = "text" }) => {
   const [sortedData, setSortedData] = useState(data);
   const handleSorting = () => {
     const sorted = [...sortedData].sort();
     setSortedData(sorted);
-
     if (onSort) onSort(sorted);
   };
   return (
@@ -18,7 +17,7 @@ const SortBar = ({ data = [], onSort }) => {
       size={{ sm: 1, md: 1, xl: 1, xs: 1 }}
       alignItems={"center"}
     >
-      <AButton variant="text" onClick={handleSorting}>
+      <AButton variant={variant} onClick={handleSorting}>
         <AIcon name={Sort} fullWidth />
       </AButton>
     </Grid2>

@@ -13,7 +13,7 @@ const StatsCard = ({ width, title, value, icon, description, color = "primary" }
       <Box
         sx={{
           display: "flex",
-          alignItems: "center",
+          aligns: "center",
           gap: 2,
           mb: 2,
         }}
@@ -24,7 +24,7 @@ const StatsCard = ({ width, title, value, icon, description, color = "primary" }
             height: 50,
             backgroundColor: color,
             display: "flex",
-            alignItems: "center",
+            aligns: "center",
             justifyContent: "center",
             borderRadius: "50%",
           }}
@@ -35,14 +35,14 @@ const StatsCard = ({ width, title, value, icon, description, color = "primary" }
       </Box>
 
       <Grid2 container spacing={1} flex={1}>
-        <Grid2 item xs={12} sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Grid2 size={{ xs: 12 }} sx={{ display: "flex", aligns: "center", gap: 1 }}>
           <AText variant="subtitle2" color="textSecondary">Value:</AText>
           <AText variant="h5" fontWeight="bold" sx={{ wordWrap: "break-word" }}>
             {value}
           </AText>
         </Grid2>
         {description && (
-          <Grid2 item xs={12} sx={{ maxHeight: 100, overflowY: 'auto', textAlign: 'left' }}>
+          <Grid2 size={{ xs: 12 }} sx={{ maxHeight: 100, overflowY: 'auto', textAlign: 'left' }}>
             <AText variant="subtitle2" color="textSecondary">Description:</AText>
             <AText variant="body2" color="gray" sx={{ wordWrap: "break-word" }}>
               {description}

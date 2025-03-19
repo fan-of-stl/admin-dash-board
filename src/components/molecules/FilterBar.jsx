@@ -6,6 +6,7 @@ import AIcon from "../atoms/AIcon";
 import ACard from "../atoms/ACard";
 import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
+import ClearIcon from "@mui/icons-material/Clear";
 import AButton from "../atoms/AButton";
 
 const FilterBar = ({ categories, onFilterChange }) => {
@@ -20,6 +21,12 @@ const FilterBar = ({ categories, onFilterChange }) => {
       onFilterChange(updatedFilters);
       return updatedFilters;
     });
+  };
+
+  const handleClear = () => {
+    const clearedFilters = { search: "", category: "" };
+    setFilters(clearedFilters);
+    onFilterChange(clearedFilters);
   };
 
   return (
@@ -61,6 +68,17 @@ const FilterBar = ({ categories, onFilterChange }) => {
             onClick={() => onFilterChange(filters)}
           >
             <AIcon name={FilterListIcon} /> Filter
+          </AButton>
+        </Grid>
+
+        <Grid size={{ xs: 2, sm: 2 }}>
+          <AButton
+            variant="outlined"
+            color="secondary"
+            fullWidth
+            onClick={handleClear}
+          >
+            <AIcon name={ClearIcon} /> Clear
           </AButton>
         </Grid>
       </Grid>
